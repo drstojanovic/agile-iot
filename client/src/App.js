@@ -17,8 +17,7 @@ class App extends Component {
   }
 
   boraDrljaca = () => {
-    fetch(appConfig.api).then((data) => data.json()).then((data) => {
-      console.log('data', data);
+    fetch(appConfig.api).then(data => data.json()).then((data) => {
       this.setState({ data });
     }).catch(error => console.log('Boro eroro', error));
     setTimeout(this.boraDrljaca, 6000);
@@ -40,10 +39,10 @@ class App extends Component {
               data.map((city, i) => {
                 const { averageTemperature, currentTemperature, name } = city;
                 return <Card
-                  key={i}
-                  average={averageTemperature}
-                  name={name}
-                  temperature={currentTemperature}
+                  key={ i }
+                  average={ averageTemperature }
+                  name={ name }
+                  temperature={ currentTemperature }
                 />
               }) 
             }
