@@ -40,7 +40,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    //res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
 
@@ -58,7 +57,6 @@ app.get('/api/city/all', (req, res) => {
     };
   });
 
-  console.log('rezultat jebenog geta', result);
   res.json(result);
 });
 
