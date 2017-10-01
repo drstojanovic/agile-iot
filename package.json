@@ -1,0 +1,23 @@
+{
+  "name": "agile-iot",
+  "version": "1.0.0",
+  "description": "Node + Express demo app for consuming CloudMQTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pekac/agile-iot.git"
+  },
+  "author": "Predrag Popovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pekac/agile-iot/issues"
+  },
+  "homepage": "https://github.com/pekac/agile-iot#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "mqtt": "^2.13.0"
+  }
+}
