@@ -19,7 +19,7 @@ class App extends Component {
   boraDrljaca = () => {
     fetch(appConfig.api).then(data => data.json()).then((data) => {
       this.setState({ data });
-    }).catch(error => console.log('Boro eroro', error));
+    }).catch(error => console.log('Boro erorodrljo', error));
     setTimeout(this.boraDrljaca, 6000);
   }
 
