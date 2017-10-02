@@ -37,13 +37,14 @@ class App extends Component {
         <div className="cards">
             { 
               data.map((city, i) => {
-                const { id, averageTemperature, currentTemperature, name } = city;
+                const { id, averageTemperature, currentTemperature, name, historical } = city;
                 return <Card
                   key={ id }
                   cityId={ id }
                   average={ averageTemperature }
                   name={ name }
                   temperature={ currentTemperature }
+                  historical={ historical }
                 />
               }) 
             }
