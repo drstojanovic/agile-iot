@@ -51,24 +51,31 @@ app.get('/api/city/all', (req, res) => {
   const result = Object.values(temperatures).map((temp, i) => {
     const { id, name, values } = temp;
     return {
-      id,
-      name,
+      averageTemperature: values.reduce((sum, value) => sum + value, 0) / values.length,
       currentTemperature: values[values.length - 1],
-      averageTemperature: values.reduce((sum, value) => sum + value, 0) / values.length
+      historical: values.slice(Math.max(values.length - 10, 1)),
+      id,
+      name
     };
   });
 
   res.json(result);
 });
 
+getCityById = (id) => {
+  const name = cities[id - 1];
+  return temperatures[name];
+}
+
 app.get('/api/city/:cityId', (req, res) => {
-  const name = cities[req.params.cityId - 1];
-  const city = temperatures[name];
+  const city = getCityById(req.params.cityId);
   res.json(city);
 });
 
 app.get('/api/city/:cityId/historical', (req, res) => {
-  
+  const { values } = getCityById(req.params.cityId);
+  const historical = values.slice(Math.max(arr.length - 10, 1))
+  res.json(historical);
 });
 
 app.listen(3000, () => {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Card.css';
+import { Chart } from 'react-d3-core';
+import { LineChart } from 'react-d3-basic';
+
 
 class Card extends Component {
 
@@ -17,22 +20,21 @@ class Card extends Component {
   }
 
   render() {
-    const { average, name, temperature } = this.props;
-
+    const { average, name, temperature, historical } = this.props;
     return (
-      <div className={this.criticalClass(temperature)} onClick={this.pera}>
-        <span className="card-header">
-          <span className="card-title">
-            <h3>{name}</h3>
+        <div className={this.criticalClass(temperature)} onClick={this.pera}>
+          <span className="card-header">
+            <span className="card-title">
+              <h3>{name}</h3>
+            </span>
           </span>
-        </span>
-        <span className="card-summary">
-          Temperature: {this.formatTemp(temperature)}
-        </span>
-        <span className="card-meta">
-          Average temp: {this.formatTemp(average)}
-        </span>
-      </div>
+          <span className="card-summary">
+            Temperature: {this.formatTemp(temperature)}
+          </span>
+          <span className="card-meta">
+            Average temp: {this.formatTemp(average)}
+          </span>
+        </div>
     );
   }
 }
