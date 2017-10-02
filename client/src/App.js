@@ -32,14 +32,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={ logo } alt="logo" />
+          <img src={ logo } className="App-logo" alt="logo" />
         </header>
         <div className="cards">
             { 
               data.map((city, i) => {
-                const { averageTemperature, currentTemperature, name } = city;
+                const { id, averageTemperature, currentTemperature, name } = city;
                 return <Card
-                  key={ i }
+                  key={ id }
+                  cityId={ id }
                   average={ averageTemperature }
                   name={ name }
                   temperature={ currentTemperature }

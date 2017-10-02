@@ -1,8 +1,20 @@
 .card {
-  width: 150px;                 /* Set width of cards */
-  border: 1px solid #EF9A9A;    /* Set up Border */
+  width: 220px;                 /* Set width of cards */
+  border: 1px solid #00B6B6;    /* Set up Border */
   border-radius: 4px;           /* Slightly Curve edges */
   overflow: hidden;             /* Fixes the corners */
   display: flex;                /* Children use Flexbox */
   flex-direction: column;       /* Rotate Axis */
+  margin: 15px 20px;
+  padding: 10px;
+  color: #507885;
+  cursor: pointer;
+}
+
+.card-summary, .card-meta {
+  padding: 7px 0;
+}
+
+.critical-temp {
+  border: 1px solid #bb2031;
 }

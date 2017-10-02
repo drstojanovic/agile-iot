@@ -49,8 +49,9 @@ app.get('/', (req, res) => {
 
 app.get('/api/city/all', (req, res) => {
   const result = Object.values(temperatures).map((temp, i) => {
-    const { name, values } = temp;
+    const { id, name, values } = temp;
     return {
+      id,
       name,
       currentTemperature: values[values.length - 1],
       averageTemperature: values.reduce((sum, value) => sum + value, 0) / values.length
@@ -64,6 +65,10 @@ app.get('/api/city/:cityId', (req, res) => {
   const name = cities[req.params.cityId - 1];
   const city = temperatures[name];
   res.json(city);
+});
+
+app.get('/api/city/:cityId/historical', (req, res) => {
+  
 });
 
 app.listen(3000, () => {
