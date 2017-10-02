@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { Chart } from 'react-d3-core';
-import { LineChart } from 'react-d3-basic';
-
 
 class Card extends Component {
 
